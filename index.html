@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Capitais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Tela inicial -->
+        <div id="start-screen">
+            <h1>Bem-vindo ao Jogo de Capitais</h1>
+            <label for="category">Escolha uma categoria:</label>
+            <select id="category">
+                <option value="estados-brasil">Estados do Brasil</option>
+                <option value="europa">Países da Europa</option>
+                <option value="america">Países da América</option>
+                <option value="africa">Países da África</option>
+                <option value="oceania">Países da Oceania</option>
+                <option value="asia">Países da Ásia</option>
+            </select>
+            <button id="start-game">Iniciar Jogo</button>
+        </div>
+
+        <!-- Tela do jogo -->
+        <div id="game-screen" style="display: none;">
+            <h2 id="question"></h2>
+            <form id="answers">
+
+                <label for="answer1" id="label1"><input type="radio" id="answer1" name="answer" value="0"><span></span></label><br>
+                
+                <label for="answer2" id="label2"><input type="radio" id="answer2" name="answer" value="1"><span></span></label><br>
+                
+                <label for="answer3" id="label3"><input type="radio" id="answer3" name="answer" value="2"><span></span></label><br>
+                
+                <label for="answer4" id="label4"><input type="radio" id="answer4" name="answer" value="3"><span></span></label><br>
+                
+                <label for="answer5" id="label5"><input type="radio" id="answer5" name="answer" value="4"><span></span></label><br>
+            </form>
+            <button id="check-answer">Verificar</button>
+            <p id="feedback"></p>
+        </div>
+
+        <!-- Tela de resultados -->
+        <div id="result-screen" style="display: none;">
+            <h2>Resultados</h2>
+            <p id="correct-answers"></p>
+            <p id="wrong-answers"></p>
+            <p id="total-score"></p>
+            <button id="restart-game">Jogar Novamente</button>
+        </div>
+    </div>
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="incorrect-sound" src="sounds/incorrect.mp3"></audio>
+    <audio id="win-sound" src="sounds/win.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
