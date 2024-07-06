@@ -242,38 +242,6 @@ const timeoutSound = document.getElementById('timeout-sound');
 const winSound = document.getElementById('win-sound');
 const loseSound = document.getElementById('lose-sound');
 
-
-let currentCategory;
-let currentQuestionIndex;
-let score;
-let correctAnswers;
-let wrongAnswers;
-let totalQuestions = 10;
-
-
-function startGame() {
-    currentCategory = document.getElementById('category').value;
-    currentQuestionIndex = 0;
-    score = 0;
-    correctAnswers = 0;
-    wrongAnswers = 0;
-
-    // Shuffle the questions for the current category
-    questions[currentCategory] = shuffle(questions[currentCategory]);
-
-    document.getElementById('start-screen').style.display = 'none';
-    document.getElementById('game-screen').style.display = 'block';
-    loadQuestion();
-}
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 const questions = {
     'estados-brasil': [],
     'europa': [],
@@ -284,118 +252,47 @@ const questions = {
     'todos': []
 };
 
-estadosCapitais.forEach(({ estado, capital }) => {
-    // Selecione aleatoriamente 4 outras capitais que não sejam a correta
-    const incorrectCapitals = estadosCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
+function generateQuestions(capitalsArray, categoryKey) {
+    capitalsArray.forEach(({ pais, estado, capital }) => {
+        const incorrectCapitals = capitalsArray
+            .filter(item => item.capital !== capital)
+            .map(item => item.capital);
+        shuffle(incorrectCapitals);
 
-    const question = {
-        country: estado,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
+        const options = [capital, ...incorrectCapitals.slice(0, 4)];
+        shuffle(options);
 
-    questions['estados-brasil'].push(question);
-});
+        const question = {
+            country: pais || estado,
+            answers: options,
+            correct: options.indexOf(capital)
+        };
 
-europaCapitais.forEach(({ pais, capital }) => {
-    // Selecione aleatoriamente 4 outras capitais que não sejam a correta
-    const incorrectCapitals = europaCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
+        questions[categoryKey].push(question);
+    });
+}
 
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
+generateQuestions(estadosCapitais.map(item => ({ pais: item.estado, capital: item.capital })), 'estados-brasil');
+generateQuestions(europaCapitais, 'europa');
+generateQuestions(africaCapitais, 'africa');
+generateQuestions(asiaCapitais, 'asia');
+generateQuestions(americaCapitais, 'america');
+generateQuestions(oceaniaCapitais, 'oceania');
 
-    const question = {
-        country: pais,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
-
-    questions['europa'].push(question);
-});
-
-africaCapitais.forEach(({ pais, capital }) => {
-    // Selecione aleatoriamente 4 outras capitais que não sejam a correta
-    const incorrectCapitals = africaCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
-
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
-
-    const question = {
-        country: pais,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
-
-    questions['africa'].push(question);
-});
-
-americaCapitais.forEach(({ pais, capital }) => {
-    const incorrectCapitals = americaCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
-
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
-
-    const question = {
-        country: pais,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
-
-    questions['america'].push(question);
-});
-
-oceaniaCapitais.forEach(({ pais, capital }) => {
-    const incorrectCapitals = oceaniaCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
-
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
-
-    const question = {
-        country: pais,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
-
-    questions['oceania'].push(question);
-});
-
-asiaCapitais.forEach(({ pais, capital }) => {
-    // Selecione aleatoriamente 4 outras capitais que não sejam a correta
-    const incorrectCapitals = asiaCapitais
-        .filter(ec => ec.capital !== capital)
-        .map(ec => ec.capital);
-    shuffle(incorrectCapitals);
-
-    const options = [capital, ...incorrectCapitals.slice(0, 4)];
-    shuffle(options);
-
-    const question = {
-        country: pais,
-        answers: options,
-        correct: options.indexOf(capital)
-    };
-
-    questions['asia'].push(question);
-});
-
+let currentCategory;
+let currentQuestionIndex;
+let score;
+let correctAnswers;
+let wrongAnswers;
+let totalQuestions = 10;
 
 /* Atualize o bloco do script.js */
 document.querySelectorAll('input[name="answer"]').forEach(input => {
@@ -472,6 +369,20 @@ function checkAnswer() {
     }, 2000);
 }
 
+function startGame() {
+    currentCategory = document.getElementById('category').value;
+    currentQuestionIndex = 0;
+    score = 0;
+    correctAnswers = 0;
+    wrongAnswers = 0;
+
+    // Shuffle the questions for the current category
+    questions[currentCategory] = shuffle(questions[currentCategory]);
+
+    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('game-screen').style.display = 'block';
+    loadQuestion();
+}
 
 function endGame() {
     updateProgressBar();
