@@ -250,9 +250,6 @@ let correctAnswers;
 let wrongAnswers;
 let totalQuestions = 10;
 
-document.getElementById('start-game').addEventListener('click', startGame);
-document.getElementById('check-answer').addEventListener('click', checkAnswer);
-document.getElementById('restart-game').addEventListener('click', restartGame);
 
 function startGame() {
     currentCategory = document.getElementById('category').value;
@@ -415,6 +412,7 @@ function loadQuestion() {
         const input = document.getElementById(`answer${i + 1}`);
         input.value = i;
         input.checked = false;
+        input.disabled = false; // Enable radio buttons
         label.childNodes[1].textContent = questionData.answers[i];
     }
     document.getElementById('check-answer').disabled = true;  // Disable the button initially
@@ -457,7 +455,11 @@ function checkAnswer() {
         feedbackElement.textContent = `Errado! A resposta correta é: ${questionData.answers[questionData.correct]}`;
     }
 
-    document.getElementById(`answer${answerIndex + 1}`).checked = false;
+    // Disable all radio buttons
+    document.querySelectorAll('input[name="answer"]').forEach(input => {
+        input.disabled = true;
+    });
+
     currentQuestionIndex++;
     setTimeout(() => {
         feedbackElement.textContent = '';
@@ -486,3 +488,7 @@ function restartGame() {
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'block';
 }
+
+document.getElementById('start-game').addEventListener('click', startGame);
+document.getElementById('check-answer').addEventListener('click', checkAnswer);
+document.getElementById('restart-game').addEventListener('click', restartGame);
