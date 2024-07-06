@@ -248,7 +248,7 @@ let currentQuestionIndex;
 let score;
 let correctAnswers;
 let wrongAnswers;
-let totalQuestions = 5;
+let totalQuestions = 10;
 
 document.getElementById('start-game').addEventListener('click', startGame);
 document.getElementById('check-answer').addEventListener('click', checkAnswer);
