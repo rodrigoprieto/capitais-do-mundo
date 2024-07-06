@@ -248,6 +248,7 @@ let currentQuestionIndex;
 let score;
 let correctAnswers;
 let wrongAnswers;
+let totalQuestions = 5;
 
 document.getElementById('start-game').addEventListener('click', startGame);
 document.getElementById('check-answer').addEventListener('click', checkAnswer);
@@ -259,6 +260,10 @@ function startGame() {
     score = 0;
     correctAnswers = 0;
     wrongAnswers = 0;
+
+    // Shuffle the questions for the current category
+    questions[currentCategory] = shuffle(questions[currentCategory]);
+
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('game-screen').style.display = 'block';
     loadQuestion();
@@ -375,7 +380,6 @@ oceaniaCapitais.forEach(({ pais, capital }) => {
     questions['oceania'].push(question);
 });
 
-
 asiaCapitais.forEach(({ pais, capital }) => {
     // Selecione aleatoriamente 4 outras capitais que não sejam a correta
     const incorrectCapitals = asiaCapitais
@@ -409,14 +413,19 @@ function loadQuestion() {
     for (let i = 0; i < 5; i++) {
         const label = document.getElementById(`label${i + 1}`);
         const input = document.getElementById(`answer${i + 1}`);
-        //document.getElementById(`answer${i + 1}`).value = i;
-        //document.getElementById(`label${i + 1}`).inneText = questionData.answers[i];
-        //document.getElementById(`answer${i + 1}`).checked = false;
         input.value = i;
         input.checked = false;
         label.childNodes[1].textContent = questionData.answers[i];
     }
     document.getElementById('check-answer').disabled = true;  // Disable the button initially
+
+    updateProgressBar();
+}
+
+function updateProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    const progress = (currentQuestionIndex / totalQuestions) * 100;
+    progressBar.style.width = `${progress}%`;
 }
 
 // No início do arquivo script.js, adicione a linha abaixo para garantir que o botão esteja desativado por padrão
@@ -452,7 +461,7 @@ function checkAnswer() {
     currentQuestionIndex++;
     setTimeout(() => {
         feedbackElement.textContent = '';
-        if (currentQuestionIndex < 20) {
+        if (currentQuestionIndex < totalQuestions) {
             loadQuestion();
         } else {
             endGame();
@@ -463,7 +472,7 @@ function checkAnswer() {
 
 
 function endGame() {
-
+    updateProgressBar();
     document.getElementById('game-screen').style.display = 'none';
     document.getElementById('result-screen').style.display = 'block';
     document.getElementById('correct-answers').textContent = `Acertos: ${correctAnswers}`;
@@ -472,6 +481,8 @@ function endGame() {
 }
 
 function restartGame() {
+    currentQuestionIndex = 0;
+    updateProgressBar();
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'block';
 }
