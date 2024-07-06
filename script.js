@@ -234,6 +234,239 @@ const oceaniaCapitais = [
     { pais: 'Vanuatu', capital: 'Port Vila' },
     { pais: 'Ilhas Marshall', capital: 'Majuro' }
 ];
+const geographyQuestions = [
+    {
+        question: "Qual país da África tem o espanhol como idioma oficial?",
+        answers: ["Marrocos", "Guiné Equatorial", "Burkina Faso", "Libéria"],
+        correct: 1
+    },
+    {
+        question: "A cidade de Abu Dhabi está localizada em:",
+        answers: ["Catar", "Arábia Saudita", "Emirados Árabes Unidos", "Kuwait"],
+        correct: 2
+    },
+    {
+        question: "Qual país forma o chamado 'Chifre da África'?",
+        answers: ["Eritreia", "Somália", "Etiópia", "Quênia"],
+        correct: 1
+    },
+    {
+        question: "Uganda é um dos maiores países da África. ",
+        answers: ["Verdadeiro", "Falso"],
+        correct: 1
+    },
+    {
+        question: "Qual é o país menor da América do Sul?",
+        answers: ["Uruguai", "Equador", "Guiana", "Suriname"],
+        correct: 3
+    },
+    {
+        question: "O Chile, após uma guerra, tirou a saída ao mar da Bolívia, incorporando essas terras valiosas pela mineração de cobre. Desde então, o Chile passou a ter uma área maior que a da Bolívia. ",
+        answers: ["Verdadeiro", "Falso"],
+        correct: 1
+    },
+    {
+        question: "A chamada 'Mesopotâmia asiática' é a região que fica entre os rios Tigre e Eufrates, que desembocam no:",
+        answers: ["Mar Negro", "Mar Cáspio", "Golfo de Omã", "Golfo Pérsico", "Golfo de Áden"],
+        correct: 3
+    },
+    {
+        question: "Liechtenstein é um pequeno país (microestado) da Europa localizado:",
+        answers: ["Entre Luxemburgo e Alemanha", "Entre França e Suíça", "Entre Áustria e Alemanha", "Entre Suíça e Áustria"],
+        correct: 3
+    },
+    {
+        question: "Andorra é outro dos seis microestados da Europa. Onde está localizado?",
+        answers: ["Dentro da França", "Entre França e Alemanha", "Entre Bélgica e Alemanha", "Entre França e Espanha"],
+        correct: 3
+    },
+    {
+        question: "Qual desses países NÃO está localizado no continente africano?",
+        answers: ["Guiné", "Papua Nova Guiné", "Guiné-Bissau", "Guiné Equatorial"],
+        correct: 1
+    },
+    {
+        question: "Qual desses países NÃO pertence à União Europeia?",
+        answers: ["Finlândia", "Suécia", "Noruega", "Dinamarca"],
+        correct: 2
+    },
+    {
+        question: "A denominação 'Grã-Bretanha' refere-se a:",
+        answers: ["Inglaterra + Irlanda do Norte", "Inglaterra + Escócia", "Inglaterra + País de Gales", "Inglaterra + Escócia + País de Gales", "Inglaterra + Escócia + País de Gales + Irlanda", "Inglaterra + Escócia + País de Gales + Irlanda do Norte"],
+        correct: 3
+    },
+    {
+        question: "A denominação 'Reino Unido' refere-se a:",
+        answers: ["Inglaterra + Irlanda do Norte", "Inglaterra + Escócia", "Inglaterra + País de Gales", "Inglaterra + Escócia + País de Gales", "Inglaterra + Escócia + País de Gales + Irlanda", "Inglaterra + Escócia + País de Gales + Irlanda do Norte"],
+        correct: 5
+    },
+    {
+        question: "Qual desses países ainda pertence à União Europeia em 2024 após o Brexit?",
+        answers: ["Escócia", "Irlanda", "País de Gales", "Irlanda do Norte"],
+        correct: 1
+    },
+    {
+        question: "O 'espaço Schengen' na Europa é a área de livre circulação sem controles fronteiriços entre países. Quais países compreende?",
+        answers: ["Todos os países da União Europeia", "Apenas alguns países da União Europeia", "Todos os países da União Europeia e alguns de fora", "Alguns países da União Europeia e alguns de fora"],
+        correct: 2
+    },
+    {
+        question: "A cidade de Istambul tem a particularidade de estar entre dois continentes, Europa e Ásia, separada pelo Estreito de Bósforo, que une:",
+        answers: ["Mar Negro e Mar Cáspio", "Mar Egeu e Mar Negro", "Mar Jônico e Mar de Mármara", "Mar Negro e Mar de Mármara"],
+        correct: 3
+    },
+    {
+        question: "Qual desses países NÃO faz parte dos Balcãs?",
+        answers: ["Croácia", "Romênia", "Armênia", "Sérvia", "Moldávia", "Macedônia"],
+        correct: 1
+    },
+    {
+        question: "O Estreito de Dardanelos conecta dois mares. Quais são?",
+        answers: ["Mar Negro e Mar Cáspio", "Mar Egeu e Mar Negro", "Mar de Mármara e Mar Egeu", "Mar Tirreno e Mar Jônico"],
+        correct: 2
+    },
+    {
+        question: "Desde a Sicília (sul da Itália) até o continente africano há pouco mais de 100 km. Qual é o país que está logo em frente?",
+        answers: ["Tunísia", "Argélia", "Líbia", "Marrocos"],
+        correct: 0
+    },
+    {
+        question: "Dentro da Europa está Kaliningrado, um território pertencente à Rússia. Antes da Segunda Guerra Mundial, era parte da Prússia Oriental (pertencente à Alemanha). Mas agora está desconectado da Rússia e cercado por países da União Europeia e alguns até pertencentes à OTAN. A Rússia tem interesse em manter Kaliningrado porque tem um porto operacional durante todo o ano, ao contrário dos portos russos que congelam no inverno. Onde está esse porto?",
+        answers: ["No Mar Báltico", "No Mar do Norte", "No Mar Negro", "No Golfo da Finlândia"],
+        correct: 0
+    },
+    {
+        question: "Jacarta é a capital de:",
+        answers: ["Filipinas", "Indonésia", "Malásia", "Singapura"],
+        correct: 1
+    },
+    {
+        question: "A ilha de Malta está no Mar Mediterrâneo, em frente à costa africana. A quem pertence?",
+        answers: ["Líbia", "Tunísia", "É um estado independente membro da União Europeia", "É um estado independente membro da União Africana"],
+        correct: 2
+    },
+    {
+        question: "Qual é a montanha mais alta da Espanha?",
+        answers: ["O Aneto nos Montes Pirineus", "O vulcão Teide na ilha de Tenerife", "O Mulhacén na Cordilheira Bética", "O Torre Cerredo no maciço Picos da Europa"],
+        correct: 1
+    },
+    {
+        question: "O Euro é a moeda mais utilizada no continente europeu. Quais países a utilizam?",
+        answers: ["Todos os países da União Europeia", "Apenas alguns países da União Europeia", "Todos os países da União Europeia e alguns de fora", "Alguns países da União Europeia e alguns de fora"],
+        correct: 3
+    },
+    {
+        question: "A ilha de Chipre está no Mar Mediterrâneo, em frente à Turquia e geograficamente pertence ao Oriente Próximo. Qual destas afirmações é verdadeira?",
+        answers: ["Chipre pertence à Turquia", "É um país soberano", "É uma colônia britânica", "Pertence à Grécia"],
+        correct: 1
+    },
+    {
+        question: "Qual é a capital da Austrália?",
+        answers: ["Sydney", "Melbourne", "Adelaide", "Canberra"],
+        correct: 3
+    },
+    {
+        question: "Onde está localizada a ilha de Terra Nova?",
+        answers: ["América do Norte", "América do Sul", "Em frente à África", "Perto do Japão"],
+        correct: 0
+    },
+    {
+        question: "Perto de qual país está localizada a ilha do Sri Lanka (ex-Ceilão)?",
+        answers: ["Myanmar (ex-Birmânia)", "Malásia", "Índia", "Bangladesh"],
+        correct: 2
+    },
+    {
+        question: "A Geórgia é um país montanhoso. Quais são essas montanhas?",
+        answers: ["Os Cárpatos", "Os Montes Urais", "Os Balcãs", "O Cáucaso"],
+        correct: 3
+    },
+    {
+        question: "No Mediterrâneo existem várias ilhas grandes. Qual é a maior dessas?",
+        answers: ["Maiorca", "Creta", "Córsega", "Sardenha"],
+        correct: 3
+    },
+    {
+        question: "O Mediterrâneo é composto por pequenos mares, cada um com sua própria designação. Qual destes NÃO faz parte do Mediterrâneo?",
+        answers: ["Mar da Ligúria", "Mar de Alborão", "Mar Egeu", "Mar da Líbia", "Mar de Célebes"],
+        correct: 4
+    },
+    {
+        question: "A quem pertence a Groenlândia?",
+        answers: ["EUA", "Noruega", "Canadá", "Dinamarca"],
+        correct: 3
+    },
+    {
+        question: "Qual desses grandes lagos é o maior?",
+        answers: ["Lago Baikal, na Rússia", "Lago Superior, entre EUA e Canadá", "Lago Vitória, entre Uganda, Quênia e Tanzânia", "Lago Titicaca, entre Bolívia e Peru"],
+        correct: 1
+    },
+    {
+        question: "Quais países têm costas sobre o Mar Amarelo?",
+        answers: ["China e Japão", "China e Coreia", "China e Vietnã", "China e Taiwan"],
+        correct: 1
+    },
+    {
+        question: "É sabido que a forma da África e da América do Sul se encaixam uma na outra e é porque antigamente estavam unidas. O extremo sul da África, na latitude de qual cidade da América do Sul está?",
+        answers: ["Rio de Janeiro", "Porto Alegre", "Buenos Aires", "Puerto Madryn"],
+        correct: 1
+    },
+    {
+        question: "Em qual oceano está o Mar de Flores?",
+        answers: ["Atlântico", "Pacífico", "Índico", "Antártico"],
+        correct: 2
+    },
+    {
+        question: "Desconsiderando o 'Lago Maracaibo' na Venezuela, que tem uma conexão direta com o mar, qual é o maior lago natural (não reservatório) da América do Sul?",
+        answers: ["Lago Titicaca (Bolívia-Peru)", "O chamado Mar Chiquita (embora seja um lago) na província de Córdoba, Argentina", "General Carrera-Buenos Aires (Chile-Argentina)", "Lago Argentino, província de Santa Cruz, Argentina"],
+        correct: 0
+    },
+    {
+        question: "Qual desses países NÃO é candidato a entrar na União Europeia?",
+        answers: ["Macedônia", "Kosovo", "Moldávia", "Croácia"],
+        correct: 3
+    },
+    {
+        question: "Qual é a cidade mais populosa da América?",
+        answers: ["Cidade do México", "São Paulo", "Buenos Aires", "Rio de Janeiro"],
+        correct: 1
+    },
+    {
+        question: "Onde está localizado o estado de Washington nos EUA?",
+        answers: ["Na costa Oeste", "Na costa Leste", "No sul do país"],
+        correct: 0
+    },
+    {
+        question: "Em qual país está a cidade de Esmirna?",
+        answers: ["Turquia", "Grécia", "Albânia", "Bulgária"],
+        correct: 0
+    },
+    {
+        question: "Esmirna é uma cidade costeira? Nesse caso, em qual mar?",
+        answers: ["Mar Jônico", "Mar de Mármara", "Mar de Mirtos", "Mar Egeu", "Não é uma cidade costeira"],
+        correct: 3
+    },
+    {
+        question: "Em qual país está a cidade de Karachi?",
+        answers: ["Paquistão", "Irã", "Turcomenistão", "Índia"],
+        correct: 0
+    },
+    {
+        question: "Taiwan e Hong Kong são duas ilhas próximas à China. ",
+        answers: ["Verdadeiro", "Falso"],
+        correct: 1
+    },
+    {
+        question: "Sabe-se popularmente que o Japão é uma ilha, mas isso não é correto, pois é formado por várias ilhas. Quantas aproximadamente?",
+        answers: ["Entre 10 e 50", "Entre 100 e 500", "Entre 1000 e 5000", "Mais de 5000"],
+        correct: 3
+    },
+    {
+        question: "Em qual país está a região da Transilvânia?",
+        answers: ["Hungria", "Romênia", "Ucrânia", "Moldávia"],
+        correct: 1
+    }
+];
+
 
 // Sounds
 const correctSound = document.getElementById('correct-sound');
@@ -249,7 +482,7 @@ const questions = {
     'africa': [],
     'oceania': [],
     'asia': [],
-    'todos': []
+    'geografia': []
 };
 
 function shuffle(array) {
@@ -267,13 +500,13 @@ function generateQuestions(capitalsArray, categoryKey) {
             .map(item => item.capital);
         shuffle(incorrectCapitals);
 
-        const options = [capital, ...incorrectCapitals.slice(0, 4)];
-        shuffle(options);
+        const answers = [capital, ...incorrectCapitals.slice(0, 4)];
+        shuffle(answers);
 
         const question = {
             country: pais || estado,
-            answers: options,
-            correct: options.indexOf(capital)
+            answers: answers,
+            correct: answers.indexOf(capital)
         };
 
         questions[categoryKey].push(question);
@@ -286,7 +519,9 @@ generateQuestions(africaCapitais, 'africa');
 generateQuestions(asiaCapitais, 'asia');
 generateQuestions(americaCapitais, 'america');
 generateQuestions(oceaniaCapitais, 'oceania');
+geographyQuestions.forEach(question => questions['geografia'].push(question));
 
+console.log(questions);
 let currentCategory;
 let currentQuestionIndex;
 let score;
@@ -303,19 +538,34 @@ document.querySelectorAll('input[name="answer"]').forEach(input => {
 
 function loadQuestion() {
     const questionData = questions[currentCategory][currentQuestionIndex];
-    document.getElementById('question').textContent = `Qual é a capital de ${questionData.country}?`;
-    for (let i = 0; i < 5; i++) {
+    
+    // Verifica se a categoria é "geografia" para exibir a pergunta diretamente
+    if (currentCategory === 'geografia') {
+        document.getElementById('question').textContent = questionData.question;
+    } else {
+        document.getElementById('question').textContent = `Qual é a capital de ${questionData.country}?`;
+    }
+
+    for (let i = 0; i < questionData.answers.length & i < 5; i++) {
         const label = document.getElementById(`label${i + 1}`);
         const input = document.getElementById(`answer${i + 1}`);
         input.value = i;
         input.checked = false;
         input.disabled = false; // Enable radio buttons
+        label.style.display = 'flex'; // Ensure the label is visible
         label.childNodes[1].textContent = questionData.answers[i];
     }
+
+    // Oculta as opções de resposta que não são usadas
+    for (let i = questionData.answers.length; i < 5; i++) {
+        document.getElementById(`label${i + 1}`).style.display = 'none';
+    }
+
     document.getElementById('check-answer').disabled = true;  // Disable the button initially
 
     updateProgressBar();
 }
+
 
 function updateProgressBar() {
     const progressBar = document.getElementById('progress-bar');
